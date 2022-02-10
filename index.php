@@ -37,8 +37,8 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Population</th>
+            <th>Title</th>
+            <th>Description</th>
             <th>Delete</th>
           
           </tr>

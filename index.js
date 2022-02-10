@@ -2,23 +2,15 @@ console.log('js loaded');
 
 const arr=[];
 
+var taskNo = localStorage.getItem('taskNo');
+for(var i=1;i<=taskNo;i++){
 
-    // var datas = JSON.parse(window.localStorage.getItem(1));
-
-    var datas = [];
-    keys = Object.keys(localStorage);
-    i = keys.length;
-
-    while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
-    }
-
-    console.log(values);
-
-    
-
-
+var datas = JSON.parse(window.localStorage.getItem('task-'+i));
 arr.push(datas);
+}
+
+
+
 buildTable(arr);
 
 
@@ -66,7 +58,9 @@ function addTask(){
         description:description,
     }
 
-    window.localStorage.setItem(taskNo, JSON.stringify(task));
+    window.localStorage.setItem('task-'+taskNo, JSON.stringify(task));
+
+    location.reload()
     
 }
 
